@@ -3,11 +3,17 @@
 ## Ideia Geral
 Fazer, provavelmente em java, um servidor de jogos de terminal a que todos se possam ligar para jogar em conjunto (multijogador) ou para bater os recordes uns dos outros.
 
-Desta forma, treinaríamos java, git/trabalho colaborativo, sockets, classes/objetos, estruturas de dados, etc... 
+Desta forma, treinaríamos java, git/trabalho colaborativo, sockets, classes/objetos, estruturas de dados (que vamos dar em P2), etc... 
 Para além disso, é sempre bom ter vários projetos no github (depois para arranjar emprego), especialmente projetos que mostrem que sabemos trabalhar em equipa.
 
 ## Exemplos de Jogos
 * Batalha Naval (multijogador - 1v1)
+* Minesweeper (jogador único - compete-se à base de recordes
+* Snake, Space Invaders (jogador único - compete-se à base de recordes)
+* Palavras com amigos (versão melhor xD) (multijogador - 1v1 (?))
+* Quatro-em-linha, Jogo do Galo (multijogador - 1v1)
+* Sueca, UNO (?) (multijogador - vários)
+* Xadrez
 * ...
 
 ## Considerações extra
@@ -18,6 +24,8 @@ Para além disso, é sempre bom ter vários projetos no github (depois para arra
 * Era interessante poder haver logins (por causa de recordes e tal). Cada utilizador teria um username e pass. A pass seria guardada em forma de hash e depois, no ato de fazer login, dava para comparar o hash da passe que está guardado com o hash da passe que o utilizador introduziu ao tentar fazer login. Assim ninguém consegue aceder às passes dos outros. Não teria necessariamente que ser uma base de dados, podia ser tudo guardado num ficheiro (?)
 
 * É importante que o servidor mantenha (automaticamente) um ficheiro que detenha os recordes de todos os utilizadores
+
+* Era fixe conseguir ter, concorrente com o jogo, um chatroom para se ir falando. (discutir melhor implementação)
 
 * A organização do código em si te que ser discutida primeiro. (quantos ficheiros? cada jogo é uma classe? ...)
 Convinha fazer uma classe (ou package de classes) com funções úteis para usar no resto do código
