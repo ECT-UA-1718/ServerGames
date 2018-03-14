@@ -24,6 +24,8 @@ import java.util.ArrayList;
 import util.*;
 
 public class ServerMain {
+
+    // NOTA: Aprendi como se faz comunicação por sockets em TCP em java a partir deste link: http://www.baeldung.com/a-guide-to-java-sockets
     private static ServerSocket serverSocket;
     private static Socket clientSocket;
     private static PrintWriter out; // Usado para enviar dados
