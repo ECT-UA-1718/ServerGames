@@ -10,7 +10,7 @@
  */
 
 /*
- * Estado: Lógica principal desta parte do servidor está presente, falta dar uns toquezinhos e melhorar a robustez. Falta o resto do servidor ;-)
+ * Estado: Lógica principal desta parte do servidor está presente, falta dar uns toquezinhos e melhorar a robustez. Já funciona com múltiplos clientes ao mesmo tempo. Falta o resto do servidor ;-)
  * Sugestões Extra: Fazer um passo intermédio de login (pode ser noutro ficheiro java, ver README.md)
  */
 
