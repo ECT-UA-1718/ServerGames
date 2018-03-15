@@ -39,7 +39,7 @@ public class ServerThread extends Thread {
                 switch(option){
                     default:
                         // Nada
-                        System.out.print(client.getNick() + " chose option number " + option);
+                        System.out.println(client.getNick() + " chose option number " + option);
                         client.send("Received " + option + "!"); // Tirar isto
                         break;
                 }

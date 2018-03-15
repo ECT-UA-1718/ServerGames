@@ -59,17 +59,19 @@ public class Client{
     }
 
     public String receive() throws IOException {
-        // BufferedReader only allows reading using the readLine() method. That method only reads one line
-        // Therefore, it's necessary to loop through all the lines the buffer may have
+        // O BufferedReader só deixa ler usando o método readLine(). Contudo, esse método só lê uma linha e a string pode ter várias (\n)
+        // Portanto, é necessário iterar por todas as linhas que possam existir
+
+        // ATENÇÃO: Há um bug aqui! Só faz print de uma linha se essa linha tiver \n no fim. Ou seja, o \n não pode ser colocado no início da linha seguinte. Ainda não percebi o porquê do bug
 
         StringBuilder data = new StringBuilder();
         String line;
-        
-        while( (line = in.readLine()) != null) {
+
+        while (!((line = in.readLine()).equals(""))) {
             data.append(line + "\n");
         }
 
         String s = data.toString();
-        return s.substring(0, s.length() - 1);
+        return s.substring(0, s.length() - 1); // Eliminar o último \n (que foi adicionado no while loop desta função)
     }
 } 
