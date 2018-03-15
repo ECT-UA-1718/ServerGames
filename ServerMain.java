@@ -30,7 +30,7 @@ public class ServerMain {
     private static Socket clientSocket;
     private static PrintWriter out; // Usado para enviar dados
     private static BufferedReader in; // Usado para receber dados
-    private static ArrayList<Client> users = new ArrayList<Client>(); // Usado para manter uma lista de clientes. (Não sei se vai ser preciso mas acho que sim)
+    private static ArrayList<User> users = new ArrayList<User>(); // Usado para manter uma lista de users. (Não sei se vai ser preciso mas acho que sim)
     // Usei ArrayList para não ter que andar com uma variavel 'numDeElementos' mas se for preciso muda-se
 
     /*
@@ -57,11 +57,11 @@ public class ServerMain {
                 String nick = greeting.split(": ")[1];
                 System.out.println("New Client: " + nick);
                 out.println(Cor.WARNING + misc.getLogo() + Cor.ENDC); // Enviar logo ao client
-                Client tmp = new Client(clientSocket, users.size(), nick); // Criar novo objeto Client
+                User tmp = new User(clientSocket, users.size(), nick); // Criar novo objeto User
 
                 new ServerThread(tmp).start(); // Começar nova thread que executa a lógica presente em ServerThread.java
                     
-                users.add(tmp); // Adicionar objeto client à lista
+                users.add(tmp); // Adicionar objeto user à lista
 
             } // TODO: Tratar do else
         }
@@ -74,7 +74,7 @@ public class ServerMain {
         serverSocket.close();
     }
 
-    public ArrayList<Client> getList(){
+    public ArrayList<User> getList(){
         return users;
     }
 

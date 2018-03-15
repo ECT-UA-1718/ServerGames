@@ -2,8 +2,8 @@
  * ServerGames by ECT UA 17/18
  * https://github.com/ECT-UA-1718/ServerGames
  * 
- * Esta classe represnta um cliente
- * Trata da enviar e receber dados e também de guardar informação sobre o cliente
+ * Esta classe representa um utilizador
+ * Trata da enviar e receber dados e também de guardar informação sobre o user
  * A comunicação server/cliente é feita por Sockets com o protocolo TCP
  * 
  * ESTE PROGRAMA NÃO ESTA ACABADO
@@ -17,15 +17,15 @@
 import java.io.*;
 import java.net.*;
 
-public class Client{
+public class User{
     private String nickname;
-    private int index; // Vai ser usado para guardar em que indice o cliente está na lista de users. (Assim dá para o tirar da lista mais facilmente (mas, sendo um array list, a variavel 'index' de todos os restantes ojetos Cleinte teria de ser alterada porque ao remover um elemento os indices dos restantes mudam))
+    private int index; // Vai ser usado para guardar em que indice o user está na lista de users. (Assim dá para o tirar da lista mais facilmente (mas, sendo um array list, a variavel 'index' de todos os restantes ojetos user teria de ser alterada porque ao remover um elemento os indices dos restantes mudam))
     private Socket clientSocket;
     private PrintWriter out; // Usado para enviar dados
     private BufferedReader in; // Usado para receber dados
     //private ServerThread st;
 
-    public Client(Socket s, int i, String n) throws IOException {
+    public User(Socket s, int i, String n) throws IOException {
         clientSocket = s;
         out = new PrintWriter(clientSocket.getOutputStream(), true);
         in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));

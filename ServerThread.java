@@ -21,26 +21,26 @@ import java.io.*;
 import util.*;
 
 public class ServerThread extends Thread {
-    private Client client;
+    private User user;
 
-    public ServerThread(Client client) {
-        this.client = client;
+    public ServerThread(User user) {
+        this.user = user;
     }
 
     public void run() {
         // É preciso usar try/catch porque não se pode adicionar 'throws IOException' neste método (devido a ser um método proveninente da classe Thread
         try{
-            System.out.println("New Thread! Client is: " + client.getNick());
+            System.out.println("New Thread! Client is: " + user.getNick());
             while(true){
-                client.send(Misc.getMenu());
-                int option = Get.getIntInRangeFromClient(client, 1, 4); // Pedir ao utilizador um número que seja uma opção válida
+                user.send(Misc.getMenu());
+                int option = Get.getIntInRangeFromClient(user, 1, 4); // Pedir ao utilizador um número que seja uma opção válida
 
                 // TODO: Acabar isto
                 switch(option){
                     default:
                         // Nada
-                        System.out.println(client.getNick() + " chose option number " + option);
-                        client.send("Received " + option + "!"); // Tirar isto
+                        System.out.println(user.getNick() + " chose option number " + option);
+                        user.send("Received " + option + "!"); // Tirar isto
                         break;
                 }
             }
