@@ -47,3 +47,21 @@ Convinha fazer uma classe (ou package de classes) com funções úteis para usar
  * Raspberry Pi ligado ao Hamachi
  * Raspberry Pi aberto à rede externa (seria necessário mexer no router)
  * ...
+
+## Flow
+1. O servidor liga-se. Fica à escuta de novas conecções
+2. Um cliente liga-se. Tenta conectar-se ao servidor
+3. O servidor aceita a conexão do cliente. O cliente faz login com user e pass
+    * OK --> Continua
+    * FAIL --> Mata a conexão
+4. O cliente imprime o menu e a lista de players online
+5. O cliente escolhe um jogo (jogo x)
+    * Se o jogo é singleplayer, executa o jogo e no final manda o score (e mais estatísticas relevantes) para o server. 
+    * Se o jogo é multiplayer:
+        1. Verificar se o jogo escolhido está na lista de jogos pendentes
+            * Se não, envia um sinal ao server para que o jogo x seja adicionado a uma lista de jogos pendentes (esse cliente fica o player1, primeiro a começar)
+            * Se sim, começa o jogo (fica como player2)
+        2. Executa o jogo
+        3. O server guarda recordes e estatísticass
+6. Volta ao passo 4
+
